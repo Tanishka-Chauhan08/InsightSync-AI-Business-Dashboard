@@ -29,6 +29,7 @@
 3. Open `ai-engine.js` and replace `"YOUR_GEMINI_API_KEY_HERE"` with your actual key.
 4. Open `index.html` in your browser.
 
+---
 
 ## 📂 Project Structure
 
