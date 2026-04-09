@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InsightSync | AI Business Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="dashboard-wrapper">
+      <aside class="sidebar">
+        <div class="logo">InsightSync</div>
+        <nav>
+          <div class="nav-item active">Inventory</div>
+          <div class="nav-item">Sales Analysis</div>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="top-bar">
+          <h1 id="page-title">Business Overview</h1>
+          <button id="ai-consultant-btn" class="btn-ai">
+            ✨ Get AI Insights
+          </button>
+        </header>
+        <div id="ai-response-box" class="ai-box hidden">
+          <div class="ai-header">Gemini Business Consultant</div>
+          <p id="ai-text">Analyzing your data...</p>
+        </div>
+        <div id="inventory-view">
+          <section class="stats-grid">
+            <div class="stat-card">
+              <span>Total Products</span>
+              <h2 id="total-products">0</h2>
+            </div>
+            <div class="stat-card">
+              <span>Low Stock Alerts</span>
+              <h2 id="low-stock-count" style="color: #f59e0b">0</h2>
+            </div>
+            <div class="stat-card">
+              <span>Out of Stock</span>
+              <h2 id="out-of-stock-count" style="color: #ef4444">0</h2>
+            </div>
+            <div class="stat-card">
+              <span>Inventory Value</span>
+              <h2 id="total-value">₹0</h2>
+            </div>
+          </section>
+
+          <section class="table-card">
+            <div class="table-header">
+              <h3>Product Inventory</h3>
+              <input
+                type="text"
+                id="table-search"
+                placeholder="Search product name..."
+              />
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Product Name</th>
+                  <th>Stock</th>
+                  <th>Price (₹)</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="product-list"></tbody>
+            </table>
+          </section>
+        </div>
+        <div id="sales-view" class="hidden">
+          <section class="stats-grid">
+            <div class="stat-card">
+              <span>Total Sales Volume</span>
+              <h2 id="sales-volume">₹12.5L</h2>
+            </div>
+            <div class="stat-card">
+              <span>Monthly Growth</span>
+              <h2 style="color: #10b981">+15%</h2>
+            </div>
+          </section>
+
+          <div class="table-card" style="padding: 20px">
+            <h3>Monthly Sales Performance</h3>
+            <div class="chart-responsive-container">
+              <div>
+                <canvas id="salesChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
