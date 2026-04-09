@@ -1,4 +1,4 @@
-const GEMINI_API_KEY = "AIzaSyB4wLKU7w8q86mDzZzl3RmtBAeJd8Z4rtg";
+const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY_HERE";
 const URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 export async function getAIAdvice(data) {
