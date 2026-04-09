@@ -23,6 +23,13 @@
 
 ---
 
+## ⚙️ How to Run Locally
+1. Clone the repository.
+2. Get your own API Key from [Google AI Studio](https://aistudio.google.com/).
+3. Open `ai-engine.js` and replace `"YOUR_GEMINI_API_KEY_HERE"` with your actual key.
+4. Open `index.html` in your browser.
+
+
 ## 📂 Project Structure
 
 ```text
