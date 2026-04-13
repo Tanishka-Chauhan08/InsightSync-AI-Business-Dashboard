@@ -3,8 +3,6 @@
 
 ---
 
-# 🚀 InsightSync - AI Business Dashboard
-
 ## 🌐 Live Demo
 [View Live Project](https://insight-sync-dashboard.netlify.app/)
 
