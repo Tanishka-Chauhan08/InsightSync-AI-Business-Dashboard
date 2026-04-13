@@ -3,6 +3,13 @@
 
 ---
 
+# 🚀 InsightSync - AI Business Dashboard
+
+## 🌐 Live Demo
+[View Live Project](https://insight-sync-dashboard.netlify.app/)
+
+---
+
 ## 🌟 Key Features
 
 - **🤖 Gemini AI Integration**: A dedicated "AI Consultant" that analyzes your live inventory and sales data to provide strategic growth advice.
@@ -40,3 +47,4 @@ insightsync-dashboard/
 ├── app.js           # Main application logic and Chart initialization
 ├── database.js      # Supabase connection and SQL queries
 ├── ai-engine.js     # Gemini AI API integration and prompt logic
+
