@@ -2,7 +2,6 @@ const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY_HERE";
 const URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
 export async function getAIAdvice(data) {
-  // We simplify the data so the prompt isn't too long/messy
   const dataSummary = data
     .map((p) => `${p.name}: ${p.stock} in stock`)
     .join(", ");
@@ -31,7 +30,7 @@ Rules:
       body: JSON.stringify({
         contents: [
           {
-            parts: [{ text: prompt }], // 'prompt' ek string honi chahiye
+            parts: [{ text: prompt }],
           },
         ],
       }),
@@ -44,15 +43,10 @@ Rules:
       console.error("Gemini API Error:", result.error.message);
       return "AI Error: " + result.error.message;
     }
-
-    // MOVE CLEANING LOGIC HERE (Outside the error block)
     const rawText = result.candidates[0].content.parts[0].text;
 
-    // This line removes all asterisks and extra spaces
-    // Saare asterisks (*) aur hashtags (#) hatao, aur bullet points ko clean karo
     const cleanText = rawText.replace(/\*/g, "").replace(/#/g, "").trim();
 
-    // Dash (-) ko bullet point symbol (•) mein badlo professional look ke liye
     return cleanText.replace(/^- /gm, "• ").replace(/\n- /g, "\n• ");
   } catch (error) {
     console.error("Fetch Error:", error);
