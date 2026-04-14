@@ -150,25 +150,25 @@ td {
 }
 
 .nav-item {
-  cursor: pointer; /* Clickable feel ke liye */
+  cursor: pointer; 
 }
 .chart-responsive-container {
   width: 100%;
-  overflow: hidden; /* Laptop par faltu scroll nahi chahiye */
+  overflow: hidden; 
 }
 /* --- RESPONSIVE LOGIC --- */
 
-/* Tablets aur Chote Laptops (Max 1024px) */
+/*For Tablets and small devices*/
 @media (max-width: 1024px) {
   .stats-grid {
-    grid-template-columns: repeat(2, 1r); /* 4 columns se 2 columns kar diya */
+    grid-template-columns: repeat(2, 1r); 
   }
 }
 
 /* Mobile Devices (Max 768px) */
 @media (max-width: 768px) {
   .dashboard-wrapper {
-    flex-direction: column; /* Sidebar ab upar aayega */
+    flex-direction: column; 
   }
 
   .sidebar {
@@ -180,7 +180,7 @@ td {
   nav {
     display: flex;
     gap: 10px;
-    overflow-x: auto; /* Buttons horizontal scroll honge */
+    overflow-x: auto; 
   }
 
   .nav-item {
@@ -193,7 +193,7 @@ td {
   }
 
   .stats-grid {
-    grid-template-columns: 1fr; /* Single column layout mobile ke liye */
+    grid-template-columns: 1fr; 
   }
 
   .top-bar {
@@ -202,37 +202,37 @@ td {
     align-items: flex-start;
   }
   .table-header {
-    flex-direction: column; /* Stack vertically */
+    flex-direction: column; 
     align-items: flex-start;
-    gap: 15px; /* Thoda gap badhao */
+    gap: 15px; 
   }
 
   #table-search {
-    width: 100%; /* Pure screen par fail jaye */
-    height: 45px; /* Touch karne mein asani ho */
-    font-size: 16px; /* Mobile par automatic zoom na ho */
+    width: 100%;
+    height: 45px; 
+    font-size: 16px; 
     margin-top: 5px;
   }
   .btn-ai {
-    width: 80% !important; /* Poora wide nahi, thoda space side mein professional lagta hai */
+    width: 80% !important; 
     max-width: 300px;
-    margin: 1rem auto !important; /* Center mein lane ke liye */
+    margin: 1rem auto !important; 
     display: block !important;
     position: relative;
-    z-index: 999; /* Isse click responsive ho jayega */
+    z-index: 999; 
     padding: 15px 20px;
     font-size: 14px;
     cursor: pointer;
-    touch-action: manipulation; /* Mobile click delay hatane ke liye */
+    touch-action: manipulation; 
   }
   .chart-responsive-container {
     overflow-x: auto;
     overflow-y: hidden;
   }
 
-  /* 👇 wrapper banayega fixed chart area */
+  
   .chart-responsive-container > div {
-    width: 500px; /* 👈 fixed logical width */
+    width: 500px; 
   }
 
   .chart-responsive-container canvas {
