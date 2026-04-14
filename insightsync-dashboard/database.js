@@ -6,7 +6,7 @@ const supabaseKey =
 const _supabase = createClient(supabaseUrl, supabaseKey);
 
 export const fetchProducts = async () => {
-  // This is the JS version of "SELECT * FROM products"
+ 
   const { data, error } = await _supabase.from("products").select("*");
 
   if (error) {
