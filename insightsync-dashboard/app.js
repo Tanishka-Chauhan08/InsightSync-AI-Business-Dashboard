@@ -1,7 +1,7 @@
 import { fetchProducts, getStats } from "./database.js";
 import { getAIAdvice } from "./ai-engine.js";
 
-let productsData = []; // Global variable to hold data for AI
+let productsData = []; 
 
 const renderUI = async () => {
   const list = document.getElementById("product-list");
@@ -59,11 +59,9 @@ let timeout;
 document.getElementById("table-search").addEventListener("input", (e) => {
   clearTimeout(timeout);
 
-  // Debouncing to keep it professional and performant
   timeout = setTimeout(() => {
     const searchTerm = e.target.value.toLowerCase();
 
-    // Filter the existing data we got from Supabase
     const filtered = productsData.filter((p) =>
       p.name.toLowerCase().includes(searchTerm),
     );
@@ -92,22 +90,21 @@ const inventoryView = document.getElementById("inventory-view");
 const salesView = document.getElementById("sales-view");
 const pageTitle = document.getElementById("page-title");
 
-// Sidebar buttons select karein (Image 1 ke line 18-19 ke aadhar par)
 const navItems = document.querySelectorAll(".nav-item");
 
 navItems.forEach((item) => {
   item.addEventListener("click", () => {
-    // Active class switch karein
+   
     navItems.forEach((nav) => nav.classList.remove("active"));
     item.classList.add("active");
 
-    // Check karein konsa tab click hua
+   
     if (item.innerText.includes("Sales Analysis")) {
       inventoryView.classList.add("hidden");
       salesView.classList.remove("hidden");
       pageTitle.innerText = "Sales Analysis";
       document.getElementById("ai-consultant-btn").style.display = "none";
-      // ... Line 109: style.display = "none";
+    
       renderSalesChart();
     } else {
       salesView.classList.add("hidden");
@@ -127,7 +124,7 @@ function renderSalesChart() {
   window.myChart = new Chart(ctx, {
     type: "line",
     data: {
-      // Poore 12 mahine
+      
       labels: [
         "Jan",
         "Feb",
@@ -145,7 +142,7 @@ function renderSalesChart() {
       datasets: [
         {
           label: "Monthly Revenue (₹)",
-          // 12 mahino ka sample data (Aap isse change bhi kar sakte ho)
+       
           data: [
             450000, 520000, 480000, 610000, 590000, 618000, 650000, 700000,
             680000, 720000, 750000, 800000,
@@ -166,21 +163,21 @@ function renderSalesChart() {
       aspectRatio: 2.5,
       plugins: {
         legend: {
-          display: false, // <--- YE LINE IS BOX KO HATA DEGI
+          display: false, 
         },
       },
       scales: {
         x: {
           ticks: {
             autoSkip: false,
-            maxRotation: 45, // Mobile par labels tilt honge toh sundar lagenge
+            maxRotation: 45, 
             minRotation: 45,
           },
         },
         y: {
           beginAtZero: true,
           ticks: {
-            // Amount ko readability ke liye format karein
+           
             callback: function (value) {
               return "₹" + value.toLocaleString();
             },
